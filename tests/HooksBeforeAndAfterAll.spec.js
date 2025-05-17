@@ -1,7 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-test('Product Details', async ({ page }) => {
+let page;
 
+test.beforeAll(async ({browser})=>{
+
+    page = await browser.newPage();
     await page.goto('https://demoblaze.com/index.html');
 
     //click login button
@@ -9,6 +12,19 @@ test('Product Details', async ({ page }) => {
     await page.locator('#loginusername').fill('pavanol')
     await page.locator('#loginpassword').fill('test@123');
     await page.locator("button[onclick='logIn()']").click();
+
+})
+
+
+test.afterAll(async ()=>{
+    
+     //Logging out
+    await page.locator('#logout2').click();
+
+})
+
+
+test('Product Details', async () => {
 
     //Get all products
     const products = await page.$$('.hrefch');
@@ -16,21 +32,10 @@ test('Product Details', async ({ page }) => {
 
     await page.waitForTimeout(4000);
 
-    //Logging out
-    await page.locator('#logout2').click();
-
 })
 
 
-test('Add to cart', async ({ page }) => {
-
-    await page.goto('https://demoblaze.com/index.html');
-
-    //click login button
-    await page.locator('#login2').click();
-    await page.locator('#loginusername').fill('pavanol')
-    await page.locator('#loginpassword').fill('test@123');
-    await page.locator("button[onclick='logIn()']").click();
+test('Add to cart', async () => {
 
     //Click the product and add to cart
     await page.locator("//a[normalize-space()='Samsung galaxy s6']").click();
@@ -45,9 +50,5 @@ test('Add to cart', async ({ page }) => {
     })
 
     await page.waitForTimeout(4000);
-
-    //Logging out
-    await page.locator('#logout2').click();
-
 
 })
