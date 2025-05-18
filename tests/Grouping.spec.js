@@ -17,7 +17,7 @@ test.afterEach(async () => {
 })
 
 
-test.describe('Group 1', () => {
+test.describe.skip('Group 1', () => {
 
     test('Test 1', async ({ page }) => {
         console.log('This is test 1');
@@ -29,7 +29,7 @@ test.describe('Group 1', () => {
 
 })
 
-test.describe('Group 2', () => {
+test.describe.only('Group 2', () => {
 
     test('Test 3', async ({ page }) => {
         console.log('This is test 3');
