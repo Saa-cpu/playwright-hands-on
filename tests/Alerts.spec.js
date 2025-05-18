@@ -1,4 +1,4 @@
-const {test,expect} =  require('@playwright/test');
+import {test, expect} from '@playwright/test';
 
 //alert dialog popup
 test.skip('Handling Alerts',async({page})=>{
