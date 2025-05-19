@@ -1,13 +1,13 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 //alert dialog popup
-test.skip('Handling Alerts',async({page})=>{
+test.skip('Handling Alerts', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
     //Enabling alert handling
     //AKA Dialog window handle, we have to do this before clicking the button which gives the alert
-    page.on('dialog', async dialog=>{
+    page.on('dialog', async dialog => {
         expect(dialog.type()).toContain('alert');
         expect(dialog.message()).toContain('I am an alert box!');
         await dialog.accept();
@@ -23,13 +23,13 @@ test.skip('Handling Alerts',async({page})=>{
 
 
 //confirmation dialog
-test.skip('Confirmation box with Ok and Cancel',async({page})=>{
+test.skip('Confirmation box with Ok and Cancel', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
     //Enabling alert handling
     //AKA Dialog window handle, we have to do this before clicking the button which gives the alert
-    page.on('dialog', async dialog=>{
+    page.on('dialog', async dialog => {
         expect(dialog.type()).toContain('confirm');
         expect(dialog.message()).toContain('Press a button!');
         await dialog.accept(); //close using ok button
@@ -44,17 +44,17 @@ test.skip('Confirmation box with Ok and Cancel',async({page})=>{
 
     await page.waitForTimeout(5000);
 
-    
+
 })
 
 //prompt dialog
-test('Prompt Dialog',async({page})=>{
+test('Prompt Dialog', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
     //Enabling alert handling
     //AKA Dialog window handle, we have to do this before clicking the button which gives the alert
-    page.on('dialog', async dialog=>{
+    page.on('dialog', async dialog => {
         expect(dialog.type()).toContain('prompt');
         expect(dialog.message()).toContain('Please enter your name:');
         expect(dialog.defaultValue()).toContain('Harry Potter');
@@ -69,5 +69,5 @@ test('Prompt Dialog',async({page})=>{
     expect(confirmBox).toBe('Hello John! How are you today?');
 
     await page.waitForTimeout(5000);
-    
+
 })
