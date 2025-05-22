@@ -43,5 +43,4 @@ test('Add to cart and sum', async ({ page }) => {
     expect(sum).toEqual(clean);
 
 
-
 })

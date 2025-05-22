@@ -9,7 +9,7 @@ test('Video record', async ({page})=>{
     await page.locator('#loginusername').fill('pavanol');
     await page.locator('#loginpassword').fill('test@123');
     await page.locator("button[onclick='logIn()']").click();
-    await expect(page.locator('#logout')).toBeVisible();
+    await expect(page.locator('#logout2')).toBeVisible();
 
 
     //check the congig files to see the screenshot and video configs
