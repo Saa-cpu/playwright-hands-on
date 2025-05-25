@@ -20,5 +20,18 @@ test('Test5@sanity@reg', async ({ page }) => {
     console.log('This is test 5');
 })
 
+//To run only sanity
+// npx playwright test Tags.spec.js --project chromium --grep "@sanity"
 
+//To run only regression
+// npx playwright test Tags.spec.js --project chromium --grep "@reg"
+
+//To run all except regression
+// npx playwright test Tags.spec.js --project chromium --grep-invert "@reg"
+
+//To run both regression and sanity Sanity OR Regression
+// npx playwright test Tags.spec.js --project chromium --grep "@sanity|@reg" 
+
+//To include sanity and exclude reg
+// npx playwright test Tags.spec.js --project chromium --grep "@sanity" --grep-invert "@reg"
 
