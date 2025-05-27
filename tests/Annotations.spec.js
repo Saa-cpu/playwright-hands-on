@@ -8,7 +8,7 @@ test.only('test1', async ({ page }) => {
 test('test2', async ({ page }) => {
     console.log('This is test2')
 })
-    
+
 
 //Conditional Skip annotation
 test('test3', async ({ page, browserName }) => {
@@ -34,9 +34,9 @@ test('test5', async ({ page }) => {
 
 //Conditional fail annotation
 //In the below test 
-test('test6', async ({ page, browserName}) => {
+test('test6', async ({ page, browserName }) => {
     console.log('This is test6')
-    if(browserName === 'chromium') //pass if we run in chrome
+    if (browserName === 'chromium') //pass if we run in chrome
     {
         test.fail() //expected to fail
     }
@@ -44,10 +44,10 @@ test('test6', async ({ page, browserName}) => {
     //fail + fail = pass
 })
 
-test('test7', async ({ page, browserName}) => {
+test('test7', async ({ page, browserName }) => {
     test.slow(); //Will increase the timeout 3x (check the timeout in configs)
     test.setTimeout(5000); //For this specific test the timeout will be 5 secs
     await page.goto('https://demoblaze.com/index.html');
     console.log('This is test7')
-    
+
 })
