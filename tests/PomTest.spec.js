@@ -8,4 +8,13 @@ test('test', async ({page}) =>{
     await page.locator('#loginusername').fill('pavanol');
     await page.locator('#loginpassword').fill('test@123');
     await page.locator("//button[normalize-space()='Log in']").click();
+
+
+    //Login
+
+
+    //Home
+
+
+    //Cart
 })
