@@ -12,8 +12,8 @@ exports.HomePage =
         async addProductToCart(productName) {
             const prodList = await this.page.$$(this.productList);
             for (const product of prodList) {
-                if (productName === await product.textContent()) {
-                    await product.click();
+                if(productName === await product.textContent()) {
+                    await product.click()
                     break;
                 }
             }
