@@ -9,7 +9,7 @@ test('test', async ({page}) =>{
     //Login
     const loginTest = new LoginPage(page);
     await loginTest.gotoLoginPage();
-    await loginTest.login('pavanol','test@123');
+    await loginTest.login('saajidh','test@123');
 
     //Home page activities
     const Home = new HomePage(page);

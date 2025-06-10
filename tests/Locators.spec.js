@@ -9,8 +9,8 @@ test('Locators page', async ({page})=>
     await page.click('id=login2');
 
     //provide username - css
-    //await page.locator('#loginusername').fill('pavanol');
-    await page.fill('#loginusername','pavanol')
+    //await page.locator('#loginusername').fill('saajidh');
+    await page.fill('#loginusername','saajidh')
     //await page.type('#loginusername')
 
     //provide password - css
